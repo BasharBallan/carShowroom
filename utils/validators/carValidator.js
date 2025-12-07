@@ -13,8 +13,8 @@ exports.createCarValidator = [
   check("year").isInt({ min: 1980, max: new Date().getFullYear() }).withMessage("Invalid car year"),
   check("price").isNumeric().withMessage("Car price must be a number"),
   check("mileage").isNumeric().withMessage("Car mileage must be a number"),
-  check("fuelType").isIn(["بنزين", "مازوت"]).withMessage("Invalid fuel type"),
-  check("transmission").isIn(["أوتوماتيك", "يدوي"]).withMessage("Invalid transmission type"),
+  check("fuelType").isIn(["diesel", "fuel"]).withMessage("Invalid fuel type"),
+  check("transmission").isIn(["automatic", "manual"]).withMessage("Invalid transmission type"),
   check("contactNumber").matches(/^\+?[0-9]{7,15}$/).withMessage("Invalid contact number"),
   validatorMiddleware,
 ];

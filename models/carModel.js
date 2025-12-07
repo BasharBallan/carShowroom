@@ -4,48 +4,54 @@ const carSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'اسم السيارة مطلوب'],
+      required: [true, 'car name required'],
       trim: true,
     },
     brand: {
-      type: String,
-      required: [true, 'الماركة مطلوبة'],
-      enum: ['Toyota', 'BMW', 'Mercedes', 'Hyundai', 'Kia', 'Ford', 'Other'],
+        type: mongoose.Schema.ObjectId,
+        ref: 'Brand',
+        required: [true, 'brand required'],
+    },
+    category: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Category',
+      required: [true, 'category required'],
     },
     model: {
       type: String,
-      required: [true, 'موديل السيارة مطلوب'],
+      required: [true, 'car model required'],
     },
     year: {
       type: Number,
-      required: [true, 'سنة الصنع مطلوبة'],
+      required: [true, 'car year required'],
     },
     price: {
       type: Number,
-      required: [true, 'السعر مطلوب'],
+      required: [true, 'price required'],
     },
     mileage: {
       type: Number,
-      required: [true, 'عدد الكيلومترات مطلوب'],
+      required: [true, 'mileage required'],
     },
     fuelType: {
       type: String,
-      enum: ['بنزين', 'مازوت'],
+      enum: ['diesel', 'fuel'],
       required: true,
     },
     transmission: {
       type: String,
-      enum: ['أوتوماتيك', 'يدوي'],
+      enum: ['automatic', 'manual'],
       required: true,
     },
     color: {
       type: String,
-      default: 'غير محدد',
+      enum: ['red', 'blue', 'black', 'white', 'silver', 'gray','green','orange','brown', 'other'],
+      default: 'No color selected',
     },
     status: {
       type: String,
-      enum: ['متاح', 'مباع', 'محجوز'],
-      default: 'متاح',
+      enum: ['available', 'sold', 'reserved'],
+      default: 'available',
     },
     description: {
       type: String,
@@ -54,8 +60,8 @@ const carSchema = new mongoose.Schema(
     images: [String],
     contactNumber: {
       type: String,
-      required: [true, 'رقم التواصل مطلوب'],
-      match: [/^\+?[0-9]{7,15}$/, 'رقم التواصل غير صالح'],
+      required: [true, 'contact number required'],
+      match: [/^\+?[0-9]{7,15}$/, 'invalid contact number'],
     },
   },
   { timestamps: true }

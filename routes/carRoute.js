@@ -23,13 +23,10 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(
-    authService.protect,
-    authService.allowedTo('admin', 'manager'),
-    getCars
-  )
+  .get(getCars)
   .post(
     authService.protect,
+    authService.allowedTo('admin'),
     uploadCarImages,       
     resizeCarImage,      
     createCarValidator,       
@@ -41,7 +38,7 @@ router
   .get(getCarValidator, getCar)
   .put(
     authService.protect,
-    authService.allowedTo('admin', 'manager'),
+    authService.allowedTo('admin'),
     uploadCarImages,
     resizeCarImage,
     updateCarValidator,

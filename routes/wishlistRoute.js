@@ -11,8 +11,8 @@ const {
 const router = express.Router();
 
 
-router.route('/').post(addCarToWishlist).get(getLoggedUserWishlist);
+router.route('/').post( authService.allowedTo('user'),addCarToWishlist).get(authService.allowedTo('user'), getLoggedUserWishlist);
 
-router.delete('/:carId', removeCarFromWishlist);
+router.delete('/:carId', authService.allowedTo('user'), removeCarFromWishlist);
 
 module.exports = router;

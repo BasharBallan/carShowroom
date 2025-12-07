@@ -47,19 +47,7 @@ module.exports = {
 
   user_list: { en: 'Users list fetched successfully.', ar: 'تم جلب قائمة المستخدمين بنجاح.' },
 
-  // =========================
-  // 📦 Product
-  // =========================
-  product_created: { en: 'Product created successfully.', ar: 'تم إنشاء المنتج بنجاح.' },
-
-  product_updated: { en: 'Product updated successfully.', ar: 'تم تحديث المنتج بنجاح.' },
-
-  product_deleted: { en: 'Product deleted successfully.', ar: 'تم حذف المنتج بنجاح.' },
-
-  product_fetched: { en: 'Product fetched successfully.', ar: 'تم جلب المنتج بنجاح.' },
-
-  product_list: { en: 'Products list fetched successfully.', ar: 'تم جلب قائمة المنتجات بنجاح.' },
-
+ 
   // =========================
   // 🏷️ Brand
   // =========================
@@ -86,30 +74,19 @@ module.exports = {
 
   category_list: { en: 'Categories list fetched successfully.', ar: 'تم جلب قائمة التصنيفات بنجاح.' },
 
-  // =========================
-  // 🛒 Order
-  // =========================
-  order_created: { en: 'Order created successfully.', ar: 'تم إنشاء الطلب بنجاح.' },
-
-  order_updated: { en: 'Order updated successfully.', ar: 'تم تحديث الطلب بنجاح.' },
-
-  order_deleted: { en: 'Order deleted successfully.', ar: 'تم حذف الطلب بنجاح.' },
-
-  order_fetched: { en: 'Order fetched successfully.', ar: 'تم جلب الطلب بنجاح.' },
-
-  order_list: { en: 'Orders list fetched successfully.', ar: 'تم جلب قائمة الطلبات بنجاح.' },
+ 
 
  // =========================
 // 🚗 Wishlist
 // =========================
 wishlist_added: { 
-  en: 'Product added successfully to your wishlist.', 
-  ar: 'تمت إضافة المنتج إلى قائمة الرغبات بنجاح.' 
+  en: 'Car added successfully to your wishlist.', 
+  ar: 'تمت إضافة السيارة إلى قائمة الرغبات بنجاح.' 
 },
 
 wishlist_removed: { 
-  en: 'Product removed successfully from your wishlist.', 
-  ar: 'تمت إزالة المنتج من قائمة الرغبات بنجاح.' 
+  en: 'Car removed successfully from your wishlist.', 
+  ar: 'تمت إزالة السيارة من قائمة الرغبات بنجاح.' 
 },
 
 wishlist_fetched: { 
@@ -118,8 +95,8 @@ wishlist_fetched: {
 },
 
 wishlist_already_exists: { 
-  en: 'This product is already in your wishlist.', 
-  ar: 'هذا المنتج موجود بالفعل في قائمة الرغبات.' 
+  en: 'This car is already in your wishlist.', 
+  ar: 'هذه السيارة موجودة بالفعل في قائمة الرغبات.' 
 },
 
   // =========================

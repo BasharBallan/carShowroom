@@ -26,10 +26,10 @@ const router = express.Router();
 router
   .route('/')
    
-  .get(authService.protect,  authService.allowedTo('admin', 'manager'),getCategories)
+  .get(authService.protect,getCategories)
   .post(
     authService.protect,
-    authService.allowedTo('admin', 'manager'),
+    authService.allowedTo('admin'),
     uploadCategoryImage,
     resizeImage,
     createCategoryValidator,
@@ -40,6 +40,7 @@ router
   .get(getCategoryValidator, getCategory)
   .put(
     authService.protect,
+    authService.allowedTo('admin'),
     uploadCategoryImage,
     resizeImage,
     updateCategoryValidator,
@@ -47,6 +48,7 @@ router
   )
   .delete(
     authService.protect,
+    authService.allowedTo('admin'),
     deleteCategoryValidator,
     deleteCategory
   );

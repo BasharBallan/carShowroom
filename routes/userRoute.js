@@ -29,23 +29,18 @@ const router = express.Router();
 
 router.get("/getMe", getLoggedUserData, getUser);
 router.put("/changeMyPassword", updateLoggedUserPassword);
-router.put("/updateMe", updateLoggedUserValidator, updateLoggedUserData);
+router.put("/updateMe", authService.allowedTo('user'), updateLoggedUserValidator, updateLoggedUserData);
 router.delete("/deleteMe", deleteLoggedUserData);
 
-// Admin
-router.put(
-  "/changePassword/:id",
-  changeUserPasswordValidator,
-  changeUserPassword
-);
+
 router
   .route("/")
-  .get(getUsers)
-  .post(uploadUserImage, resizeImage, createUserValidator, createUser);
+  .get( authService.allowedTo('admin'), getUsers)
+  .post(authService.allowedTo('admin'), uploadUserImage, resizeImage, createUserValidator, createUser);
 router
   .route("/:id")
   .get(getUserValidator, getUser)
-  .put(uploadUserImage, resizeImage, updateUserValidator, updateUser)
+  .put(authService.allowedTo('admin'), uploadUserImage, resizeImage, updateUserValidator, updateUser)
   .delete(deleteUserValidator, deleteUser);
 
 module.exports = router;

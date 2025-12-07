@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema(
     passwordResetVerified: Boolean,
     role: {
       type: String,
-      enum: ['user', 'manager', 'admin'],
+      enum: ['user', 'admin'],
       default: 'user',
     },
     active: {
@@ -45,19 +45,10 @@ const userSchema = new mongoose.Schema(
     wishlist: [
       {
         type: mongoose.Schema.ObjectId,
-        ref: 'Product',
+        ref: 'Car',
       },
     ],
-    addresses: [
-      {
-        id: { type: mongoose.Schema.Types.ObjectId },
-        alias: String,
-        details: String,
-        phone: String,
-        city: String,
-        postalCode: String,
-      },
-    ],
+  
   },
   { timestamps: true }
 );
