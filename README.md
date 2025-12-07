@@ -7,7 +7,6 @@ A robust and scalable backend solution for managing a car showroom application, 
 ![Stars](https://img.shields.io/github/stars/BasharBallan/carShowroom?style=social)
 ![Forks](https://img.shields.io/github/forks/BasharBallan/carShowroom?style=social)
 
-![Project Preview](/preview_example.png)
 
 ## ✨ Features
 
