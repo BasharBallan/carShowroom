@@ -16,7 +16,6 @@ The `carShowroom` backend provides a comprehensive set of functionalities to pow
 *   🚀 **High-Performance RESTful API:** Built with Express, featuring `express-async-handler` for clean error handling and `compression` for optimized responses.
 *   🛡️ **Advanced Security Measures:** Implements `express-rate-limit`, `hpp`, and `cors` for enhanced API security against common threats.
 *   💾 **Flexible Data Management:** Powered by Mongoose and MongoDB for efficient storage and retrieval of car, user, and order data.
-*   💳 **Integrated Payment Processing:** Seamlessly handles transactions and payments through Stripe integration.
 *   🖼️ **Image Uploads & Processing:** Supports multi-image uploads and processing with `multer` and `sharp` for car listings.
 *   🌐 **Multi-language Support:** Ready for global audiences with `i18n` integration for internationalization.
 
